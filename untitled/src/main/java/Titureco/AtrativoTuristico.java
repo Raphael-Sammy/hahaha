@@ -1,4 +1,7 @@
 package Titureco;
+
+import java.util.Objects;
+
 //extends - classe
 //implements - interface
 public class AtrativoTuristico extends TiturecoList{
@@ -17,8 +20,7 @@ public class AtrativoTuristico extends TiturecoList{
 
 
     public AtrativoTuristico(){
-        this
-    }
+}
 
     public AtrativoTuristico(String nome, double latitude, double longitude, String comoChegar, String cidade, String estado){
         this.nome = nome;
@@ -29,8 +31,9 @@ public class AtrativoTuristico extends TiturecoList{
         this.estado = estado;
     }
 
-    public int hashCode(){
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, latitude, longitude, comoChegar, cidade, estado);
     }
 
     public boolean equals(Object obj){
@@ -80,9 +83,7 @@ public class AtrativoTuristico extends TiturecoList{
     public String getEstado(){
         return estado;
     }
-
     public void setEstado(String estado){
         this.estado = estado;
     }
-
 }
